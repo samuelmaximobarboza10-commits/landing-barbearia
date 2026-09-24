@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BARBEARIA BLACK | Estilo de verdade</title>
+
+    <meta
+        name="description"
+        content="Barbearia Black — cortes, barba e estilo em um ambiente premium."
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 22px 8%;
+
+            background: rgba(5, 5, 5, 0.82);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #d4af37;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 120px 8% 80px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.92) 0%,
+                    rgba(0,0,0,0.72) 45%,
+                    rgba(0,0,0,0.35) 100%
+                ),
+                url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 680px;
+        }
+
+        .tag {
+            display: inline-block;
+
+            color: #d4af37;
+            border: 1px solid rgba(212,175,55,0.5);
+
+            padding: 8px 14px;
+            border-radius: 30px;
+
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.02;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            color: #c5c5c5;
+            font-size: 18px;
+            max-width: 570px;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 16px 28px;
+
+            background: #d4af37;
+            color: #080808;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+            font-weight: 800;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.12);
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        .section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title small {
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: #888;
+            max-width: 600px;
+            margin: 15px auto 0;
+        }
+
+        /* =========================
+           SERVIÇOS
+        ========================= */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            overflow: hidden;
+
+            background: #111;
+            border: 1px solid #252525;
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-7px);
+            border-color: #d4af37;
+        }
+
+        .service img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service h3 {
+            color: #d4af37;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .service p {
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* =========================
+           SOBRE
+        ========================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .about-content small {
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .about-content h2 {
+            font-size: 45px;
+            margin: 15px 0 20px;
+        }
+
+        .about-content p {
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           GALERIA
+        ========================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 8px;
+
+            transition: 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* =========================
+           AVALIAÇÕES
+        ========================= */
+
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .review {
+            background: #111;
+            border: 1px solid #252525;
+
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .stars {
+            color: #d4af37;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .review p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .review strong {
+            color: #ffffff;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            margin: 40px 8% 100px;
+
+            padding: 80px 40px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.78),
+                    rgba(0,0,0,0.9)
+                ),
+                url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cta h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #222;
+
+            padding: 35px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            color: #666;
+        }
+
+        footer strong {
+            color: #d4af37;
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .services,
+            .reviews {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 130px 6% 70px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .section {
+                padding: 70px 6%;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            .services,
+            .reviews,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .about img {
+                height: 350px;
+            }
+
+            .cta {
+                margin: 20px 6% 70px;
+                padding: 60px 25px;
+            }
+
+            .cta h2 {
+                font-size: 34px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            BLACK
+        </div>
+
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                Barbearia Premium
+            </span>
+
+            <h1>
+                Seu estilo começa
+                <span>na cadeira.</span>
+            </h1>
+
+            <p>
+                Cortes modernos, barba impecável e atendimento
+                de alto nível em um ambiente pensado para você.
+            </p>
+
+            <a
+                class="button"
+                href="https://wa.me/5521999999999"
+                target="_blank"
+            >
+                AGENDAR HORÁRIO
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVIÇOS -->
+
+    <section class="section" id="servicos">
+
+        <div class="section-title">
+
+            <small>
+                O que fazemos
+            </small>
+
+            <h2>
+                Nossos serviços
+            </h2>
+
+            <p>
+                Cuidado, precisão e estilo em cada detalhe.
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+
+            <div class="service">
+
+                <img
+                    src="https://images.pexels.com/photos/3998414/pexels-photo-3998414.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                    alt="Corte masculino"
+                >
+
+                <div class="service-content">
+
+                    <h3>
+                        Corte Masculino
+                    </h3>
+
+                    <p>
+                        Do clássico ao moderno, feito para combinar com você.
+                    </p>
+
+                    <div class="price">
+                        R$ 45
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <img
+                    src="https://images.pexels.com/photos/7518732/pexels-photo-7518732.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                    alt="Barba masculina"
+                >
+
+                <div class="service-content">
+
+                    <h3>
+                        Barba
+                    </h3>
+
+                    <p>
+                        Acabamento preciso para deixar seu visual impecável.
+                    </p>
+
+                    <div class="price">
+                        R$ 30
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <img
+                    src="https://images.pexels.com/photos/4625639/pexels-photo-4625639.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                    alt="Corte e barba"
+                >
+
+                <div class="service-content">
+
+                    <h3>
+                        Corte + Barba
+                    </h3>
+
+                    <p>
+                        A combinação completa para renovar seu visual.
+                    </p>
+
+                    <div class="price">
+                        R$ 65
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+
+    <section class="section" id="sobre">
+
+        <div class="about">
+
+            <img
+                src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1400&q=85"
+                alt="Interior de barbearia"
+            >
+
+            <div class="about-content">
+
+                <small>
+                    Sobre nós
+                </small>
+
+                <h2>
+                    Mais que um corte.
+                    Uma experiência.
+                </h2>
+
+                <p>
+                    Na Barbearia Black, acreditamos que cuidar
+                    do visual é também cuidar de si mesmo.
+                </p>
+
+                <p>
+                    Nosso espaço foi pensado para unir conforto,
+                    estilo e atendimento de qualidade.
+                </p>
+
+                <a
+                    class="button"
+                    href="https://wa.me/5521999999999"
+                    target="_blank"
+                >
+                    FALAR CONOSCO
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALERIA -->
+
+    <section class="section" id="galeria">
+
+        <div class="section-title">
+
+            <small>
+                Nosso espaço
+            </small>
+
+            <h2>
+                Galeria
+            </h2>
+
+            <p>
+                Um ambiente feito para você relaxar e sair renovado.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img
+                src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=85"
+                alt="Interior de barbearia"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=85"
+                alt="Barbeiro trabalhando"
+            >
+
+            <img
+                src="https://images.pexels.com/photos/9992819/pexels-photo-9992819.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Barbeiro cortando cabelo"
+            >
+
+            <img
+                src="https://images.pexels.com/photos/7518733/pexels-photo-7518733.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Barba sendo feita"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=85"
+                alt="Barbearia masculina"
+            >
+
+            <img
+                src="https://images.pexels.com/photos/4625624/pexels-photo-4625624.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Cliente em barbearia"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- AVALIAÇÕES -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <small>
+                Clientes
+            </small>
+
+            <h2>
+                O que dizem
+            </h2>
+
+        </div>
+
+
+        <div class="reviews">
+
+
+            <div class="review">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Ambiente excelente e o corte ficou exatamente
+                    como eu queria. Com certeza vou voltar."
+                </p>
+
+                <strong>
+                    Lucas M.
+                </strong>
+
+            </div>
+
+
+            <div class="review">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Atendimento muito bom e o barbeiro realmente
+                    entende de corte."
+                </p>
+
+                <strong>
+                    Rafael S.
+                </strong>
+
+            </div>
+
+
+            <div class="review">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Lugar bonito, atendimento rápido e resultado
+                    impecável."
+                </p>
+
+                <strong>
+                    Gabriel R.
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta" id="contato">
+
+        <h2>
+            Pronto para mudar o visual?
+        </h2>
+
+        <p>
+            Reserve seu horário agora pelo WhatsApp.
+        </p>
+
+        <a
+            class="button"
+            href="https://wa.me/5521999999999"
+            target="_blank"
+        >
+            AGENDAR PELO WHATSAPP
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            © 2026 <strong>BARBEARIA BLACK</strong>
+        </div>
+
+        <div>
+            Rio de Janeiro • Brasil
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
